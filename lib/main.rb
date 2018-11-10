@@ -1,9 +1,7 @@
 require_relative 'table.rb'
-require_relative 'robot.rb'
 require_relative 'player.rb'
 
-robot = Robot.new
-table = Table.new
+table = Table.new(5,5)
 player = Player.new
 
 puts "Welcome to the Robot Game"

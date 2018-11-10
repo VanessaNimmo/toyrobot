@@ -4,16 +4,16 @@ require 'table'
 # #method indicates instance methods
 RSpec.describe Table do
   describe ".initialize" do
-    # This next line is optional as rspec just knows that what you are testing is an instance of the described class.
-    # subject = Table.new
+    # You only need to define subject if your object is initialized with parameters.
+    subject = Table.new(5,5)
 
     it "should be an object of class Table" do
       expect(subject).to be_a_kind_of(Table)
     end
 
-    it "should have sides 5 squares long" do
-      expect(subject.x).to eq(5)
-      expect(subject.y).to eq(5)
+    it "should have sides 5 squares long that are indexed from 0" do
+      expect(subject.x).to eq(4)
+      expect(subject.y).to eq(4)
     end
 
     it "should have access to four directions" do

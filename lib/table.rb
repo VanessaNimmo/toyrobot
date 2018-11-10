@@ -1,9 +1,9 @@
 class Table
 attr_reader :x, :y
 DIRECTIONS = ['NORTH','EAST','SOUTH','WEST']
-  def initialize
-    @x = 5
-    @y = 5
+  def initialize(x,y)
+    @x = x-1
+    @y = y-1
   end
 
 end
