@@ -15,4 +15,19 @@ attr_reader :placed
     @y = y
     @facing = facing
   end
+
+  def forward
+    if @placed
+      case @facing
+      when 'NORTH'
+        @y += 1
+      when 'EAST'
+        @x += 1
+      # when 'SOUTH'
+      #   @y -= 1
+      # when 'WEST'
+      #   @x -=1
+      end
+    end
+  end
 end

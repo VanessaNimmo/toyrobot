@@ -25,9 +25,16 @@ RSpec.describe Robot do
       expect(subject.placed).to eq(true)
     end
 
-    it "should move forward one space in the direction it is facing when given the command MOVE" do
-      
+    it "should move forward one space in the direction it is facing when given the command FORWARD" do
+      subject.place(0,0,'NORTH')
+      subject.forward
+      expect(subject.y).to eq(1)
+      subject.place(2,3,'EAST')
+      subject.forward
+      expect(subject.x).to eq(3)
+      subject.place(2,3,'SOUTH')
+      subject.forward
+      expect(subject.y).to eq(2)
     end
-
   end
 end
