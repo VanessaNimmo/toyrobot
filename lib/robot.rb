@@ -1,7 +1,8 @@
 class Robot
 attr_accessor :x, :y, :facing
 attr_reader :placed
- 
+DIRECTIONS = ['NORTH','EAST','SOUTH','WEST']
+
   def initialize
     @x
     @y
@@ -27,6 +28,14 @@ attr_reader :placed
         @y -= 1
       when 'WEST'
         @x -=1
+      end
+    end
+  end
+
+  def left
+    if @placed
+      if @facing == 'NORTH'
+        @facing = 'WEST'
       end
     end
   end

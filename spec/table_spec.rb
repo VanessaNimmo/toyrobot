@@ -15,11 +15,5 @@ RSpec.describe Table do
       expect(subject.x).to eq(5)
       expect(subject.y).to eq(5)
     end
-
-    it "should have four directions" do
-      expect(Table::DIRECTIONS).to be_a_kind_of(Array)
-      expect(Table::DIRECTIONS.length).to eq(4)
-      expect(Table::DIRECTIONS).to eq(['NORTH','EAST','SOUTH','WEST'])
-    end
   end
 end

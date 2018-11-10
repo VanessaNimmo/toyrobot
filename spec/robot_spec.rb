@@ -45,5 +45,11 @@ RSpec.describe Robot do
       subject.left
       expect(subject.facing).to eq 'WEST'
     end
+
+    it "should have four directions" do
+      expect(Robot::DIRECTIONS).to be_a_kind_of(Array)
+      expect(Robot::DIRECTIONS.length).to eq(4)
+      expect(Robot::DIRECTIONS).to eq(['NORTH','EAST','SOUTH','WEST'])
+    end
   end
 end
