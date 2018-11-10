@@ -35,6 +35,15 @@ RSpec.describe Robot do
       subject.place(2,3,'SOUTH')
       subject.forward
       expect(subject.y).to eq(2)
+      subject.place(2,3,'WEST')
+      subject.forward
+      expect(subject.x).to eq(1)
+    end
+
+    it "should turn 90 degrees left when the left method is called" do
+      subject.place(0,0,'NORTH')
+      subject.left
+      expect(subject.facing).to eq 'WEST'
     end
   end
 end
