@@ -45,5 +45,11 @@ RSpec.describe Robot do
       subject.left
       expect(subject.facing).to eq 'WEST'
     end
+
+    it "should turn 90 degrees right when the right method is called" do
+      subject.place(0,0,'WEST')
+      subject.right
+      expect(subject.facing).to eq 'NORTH'
+    end
   end
 end

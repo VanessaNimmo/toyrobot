@@ -38,4 +38,16 @@ attr_reader :placed
         @facing = Table::DIRECTIONS[current_position - 1]
     end
   end
+
+  def right
+    if @placed
+        current_position = Table::DIRECTIONS.index(@facing)
+        if current_position==3 
+          new_position = 0
+        else
+          new_position = current_position += 1
+        end
+        @facing = Table::DIRECTIONS[new_position]
+    end
+  end
 end
