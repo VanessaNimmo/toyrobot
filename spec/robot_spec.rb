@@ -43,13 +43,30 @@ RSpec.describe Robot do
     it "should turn 90 degrees left when the left method is called" do
       subject.place(0,0,'NORTH')
       subject.left
-      expect(subject.facing).to eq 'WEST'
+      expect(subject.facing).to eq('WEST')
+      subject.left
+      expect(subject.facing).to eq('SOUTH')
+      subject.left
+      expect(subject.facing).to eq('EAST')
+      subject.left
+      expect(subject.facing).to eq('NORTH')
     end
 
     it "should turn 90 degrees right when the right method is called" do
       subject.place(0,0,'WEST')
       subject.right
-      expect(subject.facing).to eq 'NORTH'
+      expect(subject.facing).to eq('NORTH')
+      subject.right
+      expect(subject.facing).to eq('EAST')
+      subject.right
+      expect(subject.facing).to eq('SOUTH') 
+      subject.right
+      expect(subject.facing).to eq('WEST')
+    end
+
+    it "should report on its location when the report method is called" do
+      subject.place(0,0,'WEST')
+      expect(subject.report).to eq('0,0,WEST')
     end
   end
 end

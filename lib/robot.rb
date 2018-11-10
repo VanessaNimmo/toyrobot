@@ -2,7 +2,6 @@ class Robot
 attr_accessor :x, :y, :facing
 attr_reader :placed
 
-
   def initialize
     @x
     @y
@@ -34,20 +33,19 @@ attr_reader :placed
 
   def left
     if @placed
-        current_position = Table::DIRECTIONS.index(@facing)
-        @facing = Table::DIRECTIONS[current_position - 1]
+        current_direction = Table::DIRECTIONS.index(@facing)
+        @facing = Table::DIRECTIONS[current_direction - 1]
     end
   end
 
   def right
     if @placed
-        current_position = Table::DIRECTIONS.index(@facing)
-        if current_position==3 
-          new_position = 0
-        else
-          new_position = current_position += 1
-        end
-        @facing = Table::DIRECTIONS[new_position]
+        current_direction = Table::DIRECTIONS.reverse.index(@facing)
+        @facing = Table::DIRECTIONS.reverse[current_direction - 1]
     end
+  end
+
+  def report
+    "#{@x},#{@y},#{@facing}"
   end
 end
